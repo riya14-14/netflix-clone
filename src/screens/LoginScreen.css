@@ -1,0 +1,81 @@
+.loginScreen{
+    position:relative;
+    height: 100%;
+    background: url("https://hcdevilsadvocate.com/wp-content/uploads/2019/01/netflix-background-9-900x506.jpg");
+}
+
+.loginScreen_logo{
+    position: fixed;
+    left: 0;
+    width: 150px;
+    object-fit: contain;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.logoButton{
+    position: fixed;
+    right: 40px;
+    top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgb(253, 38, 38);
+    border: none;
+    cursor: pointer;
+}
+.gradient{
+    width: 100%;
+    z-index: 1;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4)
+}
+
+.main{
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    color: #fff;
+    padding: 20px;
+   margin-left: auto;
+   margin-right: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+.main > h2{
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.main > h3{
+    font-size: 1.2rem;
+    font-weight: 400;
+
+}
+
+ .login_input > form > input{
+    padding: 10px;
+   height: 30px;
+    border: none;
+    max-width: 600px;
+    outline-width: 0;
+
+
+
+ }
+
+ .getStarted{
+    padding: 16px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914; ;
+    font-weight: 600;
+    cursor: pointer;
+ }
+ .login_input{
+    margin: 20px;
+
+ }
