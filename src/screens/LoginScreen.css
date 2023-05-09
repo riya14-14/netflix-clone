@@ -31,9 +31,29 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
+.top {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
 .main {
   position: absolute;
   top: 5%;
+  z-index: 1;
+  color: #fff;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+.mainclass {
+  position: absolute;
+  top: 30%;
   z-index: 1;
   color: #fff;
   padding: 20px;

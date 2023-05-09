@@ -30,12 +30,13 @@ export const LoginScreen = () => {
           Sign In
         </button>
         <div className="gradient" />
-        <div className="main">
+        <div className="top">
           {signIn ? (
-            <SignInScreen />
+            <div className="main">
+              <SignInScreen />
+            </div>
           ) : (
-            <>
-              {" "}
+            <div className="mainclass">
               <h1>
                 Unlimited files,TV programmes and
                 more.
@@ -62,7 +63,7 @@ export const LoginScreen = () => {
                   </button>
                 </form>
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>
