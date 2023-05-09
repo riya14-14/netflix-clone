@@ -22,7 +22,7 @@ export const SignInScreen = () => {
       passwordRef.current.value
     )
       .then((authUser) => {
-        console.log(authUser);
+        const user = authUser.user;
       })
       .catch((error) => {
         alert(error.message);
@@ -38,7 +38,7 @@ export const SignInScreen = () => {
       passwordRef.current.value
     )
       .then((authUser) => {
-        console.log("authuser", authUser);
+        const user = authUser.user;
         navigate("/");
       })
       .catch((error) => {
@@ -49,15 +49,31 @@ export const SignInScreen = () => {
     <div className="signin">
       <form>
         <h1>SIGN IN</h1>
-        <input ref={emailRef} placeholder="Email" type="email" />
-        <input ref={passwordRef} placeholder="Password" type="password" />
-        <button className="submit" onClick={signIn}>
+        <input
+          ref={emailRef}
+          placeholder="Email"
+          type="email"
+        />
+        <input
+          ref={passwordRef}
+          placeholder="Password"
+          type="password"
+        />
+        <button
+          className="submit"
+          onClick={signIn}
+        >
           Sign In
         </button>
 
         <h4>
-          <span className="grey">New to Netflix?</span>
-          <span className="link_hover" onClick={register}>
+          <span className="grey">
+            New to Netflix?
+          </span>
+          <span
+            className="link_hover"
+            onClick={register}
+          >
             {" "}
             Sign Up now
           </span>

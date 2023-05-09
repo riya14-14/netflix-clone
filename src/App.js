@@ -1,33 +1,48 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import HomeScreen from "./screens/HomeScreen";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import { LoginScreen } from "./screens/LoginScreen";
 import { auth } from "./firebase";
-import { useDispatch, useSelector } from "react-redux";
-import { login, logout, selectUser } from "./features/userSlice";
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
+import {
+  login,
+  logout,
+  selectUser,
+} from "./features/userSlice";
 import ProfileScreen from "./screens/ProfileScreen";
+import { getAuth } from "firebase/auth";
 
 function App() {
-  const user = useSelector(selectUser);
-  
+  const auth = getAuth();
+  const user = useSelector(
+    (state) => state.counter.user
+  );
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("==>==>",user);
-    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
-      if (userAuth) {
-        console.log("user", userAuth);
-        dispatch(
-          login({
-            uis: userAuth.uid,
-            email: userAuth.email,
-          })
-        );
-      } else {
-        dispatch(logout());
+    const unsubscribe = auth.onAuthStateChanged(
+      (userAuth) => {
+        if (userAuth) {
+          dispatch(
+            login({
+              uis: userAuth.uid,
+              email: userAuth.email,
+            })
+          );
+        } else {
+          dispatch(logout());
+        }
       }
-    });
+    );
     return unsubscribe;
   }, [dispatch]);
 
@@ -38,9 +53,16 @@ function App() {
           <LoginScreen />
         ) : (
           <Routes>
-            <Route path="/profile" element={<ProfileScreen />} />
+            <Route
+              path="/profile"
+              element={<ProfileScreen />}
+            />
 
-            <Route exact path="/" element={<HomeScreen />} />
+            <Route
+              exact
+              path="/"
+              element={<HomeScreen />}
+            />
           </Routes>
         )}
       </Router>
