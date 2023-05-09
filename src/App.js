@@ -7,7 +7,7 @@ import {
   Route,
 } from "react-router-dom";
 import { LoginScreen } from "./screens/LoginScreen";
-import { auth } from "./firebase";
+
 import {
   useDispatch,
   useSelector,
@@ -15,7 +15,6 @@ import {
 import {
   login,
   logout,
-  selectUser,
 } from "./features/userSlice";
 import ProfileScreen from "./screens/ProfileScreen";
 import { getAuth } from "firebase/auth";
@@ -44,7 +43,7 @@ function App() {
       }
     );
     return unsubscribe;
-  }, [dispatch]);
+  }, [auth, dispatch]);
 
   return (
     <div className="app">

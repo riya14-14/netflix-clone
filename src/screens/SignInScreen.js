@@ -21,9 +21,7 @@ export const SignInScreen = () => {
       emailRef.current.value,
       passwordRef.current.value
     )
-      .then((authUser) => {
-        const user = authUser.user;
-      })
+      .then((authUser) => {})
       .catch((error) => {
         alert(error.message);
       });
@@ -38,7 +36,6 @@ export const SignInScreen = () => {
       passwordRef.current.value
     )
       .then((authUser) => {
-        const user = authUser.user;
         navigate("/");
       })
       .catch((error) => {

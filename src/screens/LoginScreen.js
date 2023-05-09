@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./LoginScreen.css";
 import { SignInScreen } from "./SignInScreen";
-import { useSelector } from "react-redux";
+
 import { useNavigate } from "react-router-dom";
 
 export const LoginScreen = () => {
